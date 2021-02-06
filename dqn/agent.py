@@ -8,11 +8,12 @@ from .storage import ReplayBuffer
 
 class Agent():
 
-    def __init__(self, state_size, action_size,
+    def __init__(self, state_size, action_size, device,
                  buffer_size=int(1e5), batch_size=64,
                  gamma=0.99, tau=1e-3, seed=1, lr=5e-4, update_every=4):
         self.state_size = state_size
         self.action_size = action_size
+        self.device = device
         self.buffer_size = buffer_size
         self.batch_size = batch_size
         self.gamma = gamma
@@ -20,13 +21,12 @@ class Agent():
         self.seed = random.seed(seed)
         self.update_every = update_every
         self.qnetwork_local = QNetwork(
-            state_size=state_size, action_size=action_size, seed=seed)
+            state_size=state_size, action_size=action_size, seed=seed).to(self.device)
         self.qnetwork_target = QNetwork(
-            state_size=state_size, action_size=action_size, seed=seed)
+            state_size=state_size, action_size=action_size, seed=seed).to(self.device)
         self.optimizer = torch.optim.Adam(
             self.qnetwork_local.parameters(), lr=lr)
         self.replay_buffer = ReplayBuffer(buffer_size, seed)
-        self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.time_step = 0
 
     def learn(self, experiences):
@@ -41,7 +41,7 @@ class Agent():
         self.soft_update()
 
     def soft_update(self):
-        for target_param, local_param in zip(self.qnetwork_local.parameters(), self.qnetwork_target.parameters()):
+        for local_param, target_param in zip(self.qnetwork_local.parameters(), self.qnetwork_target.parameters()):
             target_param.data.copy_(
                 self.tau * local_param.data + (1.0 - self.tau) * target_param.data)
 

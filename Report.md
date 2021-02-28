@@ -71,4 +71,4 @@ The agent was able to score an average of more than +13 over 100 episodes.
 The agent was able to solve the environment in 471 episodes with an average score of 13.03
 
 ## **Ideas for Future Work**
-Current we are using vanilla DQN Agent to solve the environment. In futur we have plans to implement several versions of the DQN algorithm like **Double DQN**, **Dueling DQN** and the **Rainbow**. Also we plan to use **Prioratized Experience Replay** method to improve the training process.
+Currently we are using vanilla DQN Agent to solve the environment. In futur we have plans to implement several versions of the DQN algorithm like **Double DQN**, **Dueling DQN** and the **Rainbow**. Also we plan to use **Prioratized Experience Replay** method to improve the training process.

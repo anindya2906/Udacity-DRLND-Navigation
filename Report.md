@@ -7,8 +7,6 @@ We have used the **Deep Q Learning** algorithm to train an agent to solve the en
 
 In **Q Learning** algorithm we maintain a table, called the **Q Table**, which stores the expected reward of each action at every state. The agent then select only the actions at every state which results in the **maximum expected reward**.
 
-> **Q**(s,a) = r(s,a) + $\gamma$ max<sub>a</sub>**Q**(s',a)
-
 This will work very well in case of environments with very small state and action space. But in case of environments with very large state space and action space this method will create a problem as the amount of memory required to store the Q Table will be very large. 
 
 To solve this problem we use **Deep Q Learning** algorithm in which we train a deep neural network model to **estimate the expected reward** of each action at any state.
@@ -19,7 +17,7 @@ In this algorithm we use **two separate networks** for learning. One network cal
 All the core classes related to the DQN Algorithm is implemented in the dqn module. Below as the detailed expalanation of individual modules and classes.
 
 >### **Modules**
->**[storage](./dqn/storage.py)** module contain the implementation of the **ReplayBuffer**
+>**[storage](./dqn/storage.py)** module contains the implementation of the **ReplayBuffer**
 >
 >**[model](./dqn/model.py)** module contains the implementation of the **Q Network** class. The neural network is implemented using PyTorch.
 >
@@ -41,7 +39,7 @@ All the core classes related to the DQN Algorithm is implemented in the dqn modu
 > **[Agent](./dqn/agent.py#L9)** This class implements the DQN Agent. It has the Local and Target networks. It implements the methods to train the networks and select action based on the current policy.
 
 > ### **Hyperparameters**
-> Below are the Hyperparameters used train the agent.
+> Below are the Hyperparameters used to train the agent.
 > * seed = 1
 > * buffer_size = 100000
 > * batch_size = 64

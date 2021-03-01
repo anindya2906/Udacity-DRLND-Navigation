@@ -1,6 +1,8 @@
 ##### **Udacity Deep Reinforcement Learning Nanodegree**
 # Project 1: Navigation
 
+![Navigation](navigation_screen.gif "Navigation")
+
 ## **Introduction**
 In this project we will train a Deep Q-Network Agent to navigate in a big square world and collect certain kind of items (yellow banana) while avioding another kind of item (blue banana).
 On collecting a yellow banana the agent gets a reward of **+1** while collecting a blue banana will get the agent a reward of **-1**. The goal of the agent is to **collect as many yellow banana as possible while avoiding blue banana.**
@@ -45,6 +47,6 @@ jupyter notebook
 ```
 Once the jupyter notebook is started open your browser and go to http://localhost:8888/ and click on the Navigation.ipynb file to open the notebook.
 
-Run all the cells in order to train a DQN-Agent from scratch and test it. Once training is completed successfully the model checkpoint will be stored as **model.pth** at the root of the project folder.
+Run all the cells in order to train a DQN-Agent from scratch and test it. Once training is completed successfully the model checkpoint will be stored as **model.pt** at the root of the project folder.
 
 **In case you dont want to train the agent from scratch then please skip the code cell which calls the train method.**

@@ -7,8 +7,6 @@ We have used the **Deep Q Learning** algorithm to train an agent to solve the en
 
 In **Q Learning** algorithm we maintain a table, called the **Q Table**, which stores the expected reward of each action at every state. The agent then select only the actions at every state which results in the **maximum expected reward**.
 
-> **Q**(s,a) = r(s,a) + $\gamma$ max<sub>a</sub>**Q**(s',a)
-
 This will work very well in case of environments with very small state and action space. But in case of environments with very large state space and action space this method will create a problem as the amount of memory required to store the Q Table will be very large. 
 
 To solve this problem we use **Deep Q Learning** algorithm in which we train a deep neural network model to **estimate the expected reward** of each action at any state.

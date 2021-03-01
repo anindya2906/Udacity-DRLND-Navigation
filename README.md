@@ -45,7 +45,7 @@ To start the jupyter notebook run the below command from the root of this projec
 ```sh
 jupyter notebook
 ```
-Once the jupyter notebook is started open your browser and go to http://localhost:8888/ and click on the Navigation.ipynb file to open the notebook.
+Once the jupyter notebook server is started open your browser and go to http://localhost:8888/ and click on the **Navigation.ipynb** file to open the notebook. Once the Notebook is open click on **Kernel > Change Kernel > drlnd** menu to change the kernel.
 
 Run all the cells in order to train a DQN-Agent from scratch and test it. Once training is completed successfully the model checkpoint will be stored as **model.pt** at the root of the project folder.
 

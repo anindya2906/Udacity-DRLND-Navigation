@@ -17,7 +17,7 @@ In this algorithm we use **two separate networks** for learning. One network cal
 All the core classes related to the DQN Algorithm is implemented in the dqn module. Below as the detailed expalanation of individual modules and classes.
 
 >### **Modules**
->**[storage](./dqn/storage.py)** module contain the implementation of the **ReplayBuffer**
+>**[storage](./dqn/storage.py)** module contains the implementation of the **ReplayBuffer**
 >
 >**[model](./dqn/model.py)** module contains the implementation of the **Q Network** class. The neural network is implemented using PyTorch.
 >
@@ -39,7 +39,7 @@ All the core classes related to the DQN Algorithm is implemented in the dqn modu
 > **[Agent](./dqn/agent.py#L9)** This class implements the DQN Agent. It has the Local and Target networks. It implements the methods to train the networks and select action based on the current policy.
 
 > ### **Hyperparameters**
-> Below are the Hyperparameters used train the agent.
+> Below are the Hyperparameters used to train the agent.
 > * seed = 1
 > * buffer_size = 100000
 > * batch_size = 64
